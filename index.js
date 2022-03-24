@@ -40,7 +40,26 @@ function moveDown() {
 }
 
 //função de tiro
+function fireLaser() {
+  let laser = createLaserElement();
+  playArea.appendChild(laser);
+  moveLaser();
+}
 
+function createLaserElement() {
+  let xPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue('left'));
+  let yPosition = parent(window.getComputedStyle(yourShip).getPropertyValue('top'));
+  let newLaser = document.createElement('img');
+  newLaser.src = 'img/shoot.png';
+  newLaser.classList.add('laser');
+  newLaser.style.left = `${xPosition}px`;
+  newLaser.style.top = `${yPosition - 10}px`;
+  return newLaser;
+}
+
+function moveLaser() {
+  
+}
  
 
 window.addEventListener('keydown', flyAhip);
